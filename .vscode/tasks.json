@@ -3,19 +3,11 @@
         {
             "type": "cppbuild",
             "label": "C/C++: nvcc build active file",
-            "command": "/usr/local/cuda/bin/nvcc",
+            "command": "make",
             "args": [
-                // "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-DMPI_SUPPORT",
-                "-I/usr/lib/x86_64-linux-gnu/openmpi/include",
-                "-L/usr/lib/x86_64-linux-gnu/openmpi/lib",
-                "-lmpi",
-                "-lmpi_cxx",
-                "-lnccl"
+                "demo",
+                "DEBUG=1",
+                "MPI=1"
             ],
             "options": {
                 "cwd": "${fileDirname}"
