@@ -4,7 +4,9 @@
 # See LICENSE.txt for license information
 #
 
-# NVCC ?= /usr/local/cuda/bin/nvcc
+# https://github.com/NVIDIA/nccl-tests/blob/7ccda3c97baf6924ff38411e364c0442096fc4be/src/Makefile
+# https://makefiletutorial.com/
+
 CUDA_HOME ?= /usr/local/cuda
 DEBUG ?= 0
 
@@ -51,5 +53,11 @@ endif
 LIBRARIES += nccl
 NVLDFLAGS += $(LIBRARIES:%=-l%)
 
-demo:
-	${NVCC} -g demo.cc -o demo $(NVCUFLAGS) $^ ${NVLDFLAGS}
+demo.o: demo.cc
+	${NVCC} -o $@ $(NVCUFLAGS) -c $^
+
+demo: demo.o
+	${NVCC} -o $@ $(NVCUFLAGS) ${NVLDFLAGS} $^
+
+clean:
+	rm -f demo demo.o
