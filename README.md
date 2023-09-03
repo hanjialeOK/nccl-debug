@@ -18,10 +18,11 @@ make demo DEBUG=1 NCCL_HOME=nccl/build NVCC_GENCODE=-gencode=arch=compute_80,cod
 gdb ./demo
 ```
 
-然后告诉 gdb 源码位置，否则 gdb 会找不到 nccl 源码，参考 [GDB stepping into shared library shows "no such file" even though debug symbols are loaded](https://stackoverflow.com/questions/60855553/gdb-stepping-into-shared-library-shows-no-such-file-even-though-debug-symbols)
+然后告诉 gdb 源码位置，否则 gdb 会找不到 nccl 源码，参考 [GDB stepping into shared library shows "no such file" even though debug symbols are loaded](https://stackoverflow.com/questions/60855553/gdb-stepping-into-shared-library-shows-no-such-file-even-though-debug-symbols)。$cdir 和 $cwd 分别是当前路径和当前工作路径。
 
 ```c
 (gdb) directory nccl/src
+Source directories searched: ***/nccl/src:$cdir:$cwd
 (gdb) b demo.cu:110
 (gdb) b demo.cu:119
 (gdb) b demo.cu:128
