@@ -10,10 +10,12 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
+                "-DMPI_SUPPORT",
                 "-I/usr/lib/x86_64-linux-gnu/openmpi/include",
                 "-L/usr/lib/x86_64-linux-gnu/openmpi/lib",
-                "-L/usr/lib/x86_64-linux-gnu/openmpi/lib64",
-                "-lmpi"
+                "-lmpi",
+                "-lmpi_cxx",
+                "-lnccl"
             ],
             "options": {
                 "cwd": "${fileDirname}"
