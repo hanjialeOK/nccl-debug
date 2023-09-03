@@ -18,7 +18,7 @@ make demo DEBUG=1 NCCL_HOME=nccl/build NVCC_GENCODE=-gencode=arch=compute_80,cod
 gdb ./demo
 ```
 
-然后告诉 gdb 源码位置，否则 gdb 会找不到 nccl 源码，参考 [GDB stepping into shared library shows "no such file" even though debug symbols are loaded](https://stackoverflow.com/questions/60855553/gdb-stepping-into-shared-library-shows-no-such-file-even-though-debug-symbols)。$cdir 和 $cwd 分别是当前路径和当前工作路径。
+然后通过 `directory nccl/src` 或者 `set substitute-path FROM TO` 告诉 gdb 源码位置，否则 gdb 会找不到 nccl 源码，参考 [GDB stepping into shared library shows "no such file" even though debug symbols are loaded](https://stackoverflow.com/questions/60855553/gdb-stepping-into-shared-library-shows-no-such-file-even-though-debug-symbols)。这个问答里介绍了.gdbinit文件，可以把 `directory nccl/src` 或者 `set substitute-path FROM TO` 写到 ～/.gdbinit 文件 或者当前工作目录下/.gdbinit 文件中，从而开启 gdb 后可以自动读取并执行。
 
 ```c
 (gdb) directory nccl/src
@@ -29,3 +29,18 @@ Source directories searched: ***/nccl/src:$cdir:$cwd
 ```
 
 start 是开始，step(s) 是进入函数，finish(fin) 是跳出函数，continue(c) 是运行至断点。
+
+## VSCODE
+
+如果使用 vscode，必须安装 C/C++ 拓展。
+
+一种方式需要上面 GDB 部分提到的 .gdbinit 文件，然后直接点击 demo.cu 文件编辑界面的右上角三角形符号运行 Debug C/C++ File 即可。
+
+第二种方式是点击左侧栏的 Debugger 按钮，选择 create a launch.json，然后编辑该文件。最主要的是 [sourceFileMap](https://code.visualstudio.com/docs/cpp/launch-json-reference#_sourcefilemap)。这个字段告诉 gdb 不要去 /nccl/src 路径下找源码文件，而应该去 ${workspaceFolder}/nccl/src。其实 vscode 的 `sourceFileMap` 就是通过 gdb 中的
+`set substitute-path` 实现的。
+
+```c
+            "sourceFileMap": {
+                "/nccl/src": "${workspaceFolder}/nccl/src",
+            },
+```
