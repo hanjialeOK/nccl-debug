@@ -7,7 +7,7 @@
             "args": [
                 "demo",
                 "DEBUG=1",
-                "MPI=1"
+                "NCCL_HOME=/opt/tiger/ncc/nccl/build"
             ],
             "options": {
                 "cwd": "${fileDirname}"

@@ -44,20 +44,23 @@ else
 NVCUFLAGS += -O0 -G -g
 endif
 
+ifneq ($(NCCL_HOME), "")
+NVCUFLAGS += -I$(NCCL_HOME)/include/
+NVLDFLAGS += -L$(NCCL_HOME)/lib
+endif
+
 MPI_HOME ?= /usr/lib/x86_64-linux-gnu/openmpi
-ifeq ($(MPI), 1)
 NVCUFLAGS += -DMPI_SUPPORT -I$(MPI_HOME)/include
 NVLDFLAGS += -L$(MPI_HOME)/lib -L$(MPI_HOME)/lib64 -lmpi -lmpi_cxx
-endif
 
 LIBRARIES += nccl
 NVLDFLAGS += $(LIBRARIES:%=-l%)
 
 demo.o: demo.cc
-	${NVCC} -o $@ $(NVCUFLAGS) -c $^
+	$(NVCC) -o $@ $(NVCUFLAGS) -c $^
 
 demo: demo.o
-	${NVCC} -o $@ $(NVCUFLAGS) ${NVLDFLAGS} $^
+	$(NVCC) -o $@ $(NVCUFLAGS) $(NVLDFLAGS) $^
 
 clean:
 	rm -f demo demo.o
