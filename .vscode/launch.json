@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            // "customLaunchSetupCommands": [
+            //     {
+            //         "text": "directory ${workspaceFolder}/nccl/src",
+            //         "description": "run target",
+            //         "ignoreFailures": false
+            //     }
+            // ],
+            "launchCompleteCommand": "exec-run",
+            // https://stackoverflow.com/questions/72014621/specified-argument-was-out-of-the-range-of-valid-values-parameter-arch
+            "targetArchitecture": "x64",
+            "linux": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb"
+            },
+            "osx": {
+              "MIMode": "lldb"
+            },
+            "windows": {
+              "MIMode": "gdb",
+              "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
+            }
+        }
+    ]
+}
