@@ -56,7 +56,7 @@ NVLDFLAGS += -L$(MPI_HOME)/lib -L$(MPI_HOME)/lib64 -lmpi -lmpi_cxx
 LIBRARIES += nccl
 NVLDFLAGS += $(LIBRARIES:%=-l%)
 
-demo.o: demo.cc
+demo.o: demo.cu
 	$(NVCC) -o $@ $(NVCUFLAGS) -c $^
 
 demo: demo.o

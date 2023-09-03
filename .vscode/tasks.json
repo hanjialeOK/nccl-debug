@@ -7,7 +7,8 @@
             "args": [
                 "demo",
                 "DEBUG=1",
-                "NCCL_HOME=/opt/tiger/ncc/nccl/build"
+                "NCCL_HOME=${workspaceFolder}/nccl/build",
+                "NVCC_GENCODE=-gencode=arch=compute_80,code=sm_80"
             ],
             "options": {
                 "cwd": "${fileDirname}"
