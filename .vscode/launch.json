@@ -37,7 +37,7 @@
               "MIMode": "gdb",
               "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
             },
-            "preLaunchTask": "builddemo",
+            "preLaunchTask": "build",
         }
     ]
 }
