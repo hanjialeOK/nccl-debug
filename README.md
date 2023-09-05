@@ -14,7 +14,7 @@ make -j32 src.build DEBUG=1 NVCC_GENCODE="-gencode=arch=compute_80,code=sm_80"
 如果使用 gdb，执行
 
 ```c
-make demo DEBUG=1 NCCL_HOME=nccl/build NVCC_GENCODE=-gencode=arch=compute_80,code=sm_80
+make demo DEBUG=1 NCCL_HOME=$(pwd)/nccl/build NVCC_GENCODE=-gencode=arch=compute_80,code=sm_80
 gdb ./demo
 ```
 
