@@ -56,6 +56,9 @@ NVLDFLAGS += -L$(MPI_HOME)/lib -L$(MPI_HOME)/lib64 -lmpi -lmpi_cxx
 LIBRARIES += nccl
 NVLDFLAGS += $(LIBRARIES:%=-l%)
 
+# It necessary to specify the lldpath, or the executable may load the other libnccl.so in LD_LIBRARY_PATH.
+# [What is the signification of LDFLAGS](https://stackoverflow.com/questions/25407320/what-is-the-signification-of-ldflags/25408832#25408832)
+# The answer told that -Wl should be removed since -Xlinker exists.
 NVLDFLAGS += -Xlinker -rpath,$(NCCL_HOME)/lib
 
 demo.o: demo.cu
