@@ -1,5 +1,9 @@
 # NCCl_DEBUG_VSCODE
 
+## Introduction
+
+示例代码在 [NCCL 2.11 Examples](https://docs.nvidia.com/deeplearning/nccl/archives/nccl_2114/user-guide/docs/examples.html)
+
 ## Compile NCCL
 
 编译 nccl-2.11-4。如果不加 NVCC_GENCODE，二进制文件会非常大，可能会导致错误，参考 [DEBUG=1 compilation fails with nccl 2.16.2 #775](https://github.com/NVIDIA/nccl/issues/775)。这里使用的 A100-SXM-80G 的计算能力是 80。
