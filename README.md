@@ -48,3 +48,13 @@ start 是开始，step(s) 是进入函数，finish(fin) 是跳出函数，contin
                 "/nccl/src": "${workspaceFolder}/nccl/src",
             },
 ```
+
+## MPI GDB
+
+首先运行 gdb
+
+```c
+mpirun -np 2 demo
+```
+
+然后使用 vscode attach 到 rank 0 进行 gdb。
