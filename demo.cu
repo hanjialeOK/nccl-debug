@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
   MPICHECK(MPI_Comm_size(MPI_COMM_WORLD, &nRanks));
 
   // sleep for mpi debug
-  sleep 30s
+  sleep(30);
 
   //calculating localRank based on hostname which is used in selecting a GPU
   uint64_t hostHashs[nRanks];
