@@ -12,6 +12,7 @@
             "program": "${workspaceFolder}/demo",
             "processId": "${command:pickProcess}",
             "MIMode": "gdb",
+            // https://github.com/microsoft/vscode-cpptools/issues/106
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
