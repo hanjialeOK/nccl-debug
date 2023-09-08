@@ -51,6 +51,9 @@ start 是开始，step(s) 是进入函数，finish(fin) 是跳出函数，contin
 
 ## MPI GDB
 
+[How do I debug an MPI program?](https://stackoverflow.com/questions/329259/how-do-i-debug-an-mpi-program)
+[[feature request] very basic support for MPI debugging multiple processes at the same time #1723](https://github.com/Microsoft/vscode-cpptools/issues/1723)
+
 首先运行 gdb
 
 ```c
