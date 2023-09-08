@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
+            // https://github.com/Microsoft/vscode-cpptools/issues/1723
             "name": "(gdb) Attach",
             "type": "cppdbg",
             "request": "attach",
