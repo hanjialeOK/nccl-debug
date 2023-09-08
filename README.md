@@ -4,6 +4,10 @@
 
 示例代码在 [NCCL 2.11 Examples](https://docs.nvidia.com/deeplearning/nccl/archives/nccl_2114/user-guide/docs/examples.html)
 
+DGX A100 topology
+
+![DGX A100 topology](https://docs.nvidia.com/dgx/dgxa100-user-guide/_images/dgxa100-system-topology.png)
+
 如果需要检查 IB 网卡信息
 
 ```c
@@ -65,7 +69,7 @@ start 是开始，step(s) 是进入函数，finish(fin) 是跳出函数，contin
 首先运行 gdb
 
 ```c
-mpirun -np 2 demo
+NCCL_TOPO_DUMP_FILE=./topo.xml mpirun -np 2 demo
 ```
 
 然后使用 vscode attach 到 rank 0 进行 gdb。
