@@ -69,7 +69,7 @@ start 是开始，step(s) 是进入函数，finish(fin) 是跳出函数，contin
 首先运行 gdb
 
 ```c
-NCCL_TOPO_DUMP_FILE=./topo.xml mpirun -np 2 demo
+NCCL_TOPO_DUMP_FILE=./topo.xml NCCL_GRAPH_DUMP_FILE=./graph.xml mpirun -np 8 demo
 ```
 
 然后使用 vscode attach 到 rank 0 进行 gdb。
