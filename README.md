@@ -73,3 +73,27 @@ NCCL_TOPO_DUMP_FILE=./topo.xml NCCL_GRAPH_DUMP_FILE=./graph.xml mpirun -np 8 dem
 ```
 
 然后使用 vscode attach 到 rank 0 进行 gdb。
+
+## cuda-gdb
+
+网上说可以使用 cuda-gdb 来 debug kernel 代码
+
+[Debugging CUDA kernels with VS Code](https://stackoverflow.com/questions/67888279/debugging-cuda-kernels-with-vs-code)
+
+[NVIDIA Nsight Visual Studio Edition](https://developer.nvidia.com/nsight-visual-studio-edition)
+
+```c
+whereis cuda-gdb
+```
+
+安装一下依赖
+
+```c
+sudo apt install libncurses5
+sudo apt install libncursesw5-dev
+suao apt install libncurses5-dev
+find / -name *libncur*
+sudo ln -s /lib/x86_64.../libncursesw.so.6 /lib/x86_64.../libncursesw.so.5
+```
+
+但是目前还没有成功。
