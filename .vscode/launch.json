@@ -60,6 +60,23 @@
               "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
             },
             "preLaunchTask": "build",
+        },
+        {
+            "name": "CUDA C++: Launch",
+            "type": "cuda-gdb",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo",
+            "args": "",
+            "environment": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build"
+        },
+        {
+            "name": "CUDA C++: Attach",
+            "type": "cuda-gdb",
+            "request": "attach",
+            "program": "${workspaceFolder}/demo",
+            "processId": "${command:cuda.pickProcess}"
         }
     ]
 }
