@@ -59,7 +59,7 @@
               "MIMode": "gdb",
               "miDebuggerPath": "C:\\MinGw\\bin\\gdb.exe"
             },
-            "preLaunchTask": "build",
+            "preLaunchTask": "rebuild",
         },
         {
             "name": "CUDA C++: Launch",
