@@ -35,13 +35,6 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            // "customLaunchSetupCommands": [
-            //     {
-            //         "text": "directory ${workspaceFolder}/nccl/src",
-            //         "description": "run target",
-            //         "ignoreFailures": false
-            //     }
-            // ],
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -49,9 +42,9 @@
                     "ignoreFailures": true
                 }
             ],
-            "sourceFileMap": {
-                "/nccl/src": "${workspaceFolder}/nccl/src",
-            },
+            // "sourceFileMap": {
+            //     "/nccl/src": "${workspaceFolder}/nccl/src",
+            // },
             "launchCompleteCommand": "exec-run",
             // https://stackoverflow.com/questions/72014621/specified-argument-was-out-of-the-range-of-valid-values-parameter-arch
             "targetArchitecture": "x64",
