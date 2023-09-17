@@ -2,7 +2,9 @@
 
 ## Introduction
 
-示例代码在 [NCCL 2.11 Examples](https://docs.nvidia.com/deeplearning/nccl/archives/nccl_2114/user-guide/docs/examples.html)
+demo 源代码在 [NCCL 2.11 Examples](https://docs.nvidia.com/deeplearning/nccl/archives/nccl_2114/user-guide/docs/examples.html)
+
+NCCL源码解读博客：[NVIDIA NCCL 源码学习（九）- 单机内ncclSend和ncclRecv的过程](https://blog.csdn.net/KIDGIN7439/article/details/128326053)
 
 DGX A100 topology
 
@@ -23,6 +25,8 @@ ibstat
 cd nccl/
 make -j32 src.build DEBUG=1 NVCC_GENCODE="-gencode=arch=compute_80,code=sm_80"
 ```
+
+LL，LL128，Simple 三种协议介绍：[What is LL128 Protocol?](https://github.com/NVIDIA/nccl/issues/281)
 
 ## GDB
 
