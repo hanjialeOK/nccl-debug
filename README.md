@@ -47,6 +47,11 @@ start 是开始，step(s) 是进入函数，finish(fin) 是跳出函数，contin
 
 ## VSCODE
 
+YouTuBe 视频：
+
+- [Nsight Visual Studio Code Edition](https://www.youtube.com/watch?v=gN3XeFwZ4ng)
+- [CUDA Support in Visual Studio Code with Julia Reid](https://www.youtube.com/watch?v=l6PgYhiQr-I)
+
 如果使用 vscode，必须安装 C/C++ 拓展。
 
 一种方式需要上面 GDB 部分提到的 .gdbinit 文件，然后直接点击 demo.cu 文件编辑界面的右上角三角形符号运行 Debug C/C++ File 即可。
