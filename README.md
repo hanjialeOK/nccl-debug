@@ -101,8 +101,6 @@ find / -name *libncur*
 sudo ln -s /lib/x86_64.../libncursesw.so.6 /lib/x86_64.../libncursesw.so.5
 ```
 
-但是目前还没有成功。
-
 如果在 console 里面遇到
 
 ```c
