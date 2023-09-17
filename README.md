@@ -102,3 +102,16 @@ sudo ln -s /lib/x86_64.../libncursesw.so.6 /lib/x86_64.../libncursesw.so.5
 ```
 
 但是目前还没有成功。
+
+如果在 console 里面遇到
+
+```c
+Cannot insert breakpoint 1,
+Cannot access memory at address xxx
+```
+
+尝试找到1号断点位置，然后取消断点
+
+```c
+-exec info break 1
+```
